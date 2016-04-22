@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Freezer by haga-rak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Freezer</h1>
+      <h2 class="project-tagline">Freezer is a .NET webpage screenshotting library. It&#39;s fully integrable into an ASP.NET MVC application and supports HTML5 / CSS3 specifications.</h2>
+      <a href="https://github.com/haga-rak/Freezer" class="btn">View on GitHub</a>
+      <a href="https://github.com/haga-rak/Freezer/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/haga-rak/Freezer/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="sample-usage" class="anchor" href="#sample-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample usage</h3>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://github.com")
+              .SetBrowserSize(1366, 768)
+              .SetCaptureZone(CaptureZone.FullPage) // Set what should be captured
+              .SetTrigger(new WindowLoadTrigger()); // Set when the picture is taken
+
+System.IO.File.WriteAllBytes("this_is_not_even_my_final_screenshot.png", screenshotJob.Freeze()); 
+</code></pre>
+
+<h3>
+<a id="screenshot-at-the-right-moment" class="anchor" href="#screenshot-at-the-right-moment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot at the right moment</h3>
+
+<p>Freezer can bind the capture instant to common web browser event (<code>DOMContentLoaded</code>, <code>window.onload</code>). </p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://github.com")
+               // Capture the screenshot 50 ms after DOMContentLoaded is fired
+              .SetTrigger(new DomReadyTrigger(50)); 
+</code></pre>
+
+<p>However,  at any time of your page's life, you can dispatch "FreezerFire" event to trigger the capture. </p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://yourwebsite.com")
+              .SetTrigger(new FreezerJsEventTrigger()); 
+</code></pre>
+
+<p>Then in your page : </p>
+
+<pre><code>document.dispatchEvent(new MessageEvent('FreezerFire')); // trigger the screenshot
+</code></pre>
+
+<h3>
+<a id="picturize-only-what-you-need" class="anchor" href="#picturize-only-what-you-need" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Picturize only what you need</h3>
+
+<p>By default, Freezer will screenshot the visible screen (<code>CaptureZone.VisibleScreen</code>). You can use <code>CaptureZone.FullPage</code>to capture the whole document excluding scroll. </p>
+
+<h4>
+<a id="get-specific-part-of-your-page" class="anchor" href="#get-specific-part-of-your-page" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get specific part of your page</h4>
+
+<p>In most cases, you won't have to crop the image result. Freezer provides several options to capture a specific zone of your page. </p>
+
+<h6>
+<a id="with-jquery" class="anchor" href="#with-jquery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>With jQuery</h6>
+
+<p>If the running page have jQuery, you can use a jQuery selector to isolate a specific container. </p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://yourwebsite.com")
+            .SetCaptureZone(new JQuerySelectedZone("#chartcontainer")); 
+</code></pre>
+
+<p>This will cause Freezer to delimit the screenshot to the zone defined by  <code>$("#chartcontainer")</code>. </p>
+
+<h6>
+<a id="with-a-javascript-callback-function" class="anchor" href="#with-a-javascript-callback-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>With a javascript callback function</h6>
+
+<p>However, it's possible to define your own way to select the capture zone by using javascript callback function : </p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://yourwebsite.com")
+            .SetCaptureZone(new UserDefinedJavascriptZone("readcoordinate",
+            @"function readcoordinate() {
+                  return  {x: 0, y: 25, width: document.body.clientWidth, height: 425}; 
+            }"));
+</code></pre>
+
+<h6>
+<a id="by-providing-crop-zone-coordinates" class="anchor" href="#by-providing-crop-zone-coordinates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>By providing crop zone coordinates</h6>
+
+<p>Finally, you can also set manually the capture zone by simply providing coordinates (x, y, width, height). </p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://yourwebsite.com")
+            .SetCaptureZone(new CroppedZone(4,8,25,156));
+</code></pre>
+
+<h3>
+<a id="customize-the-capturing-web-browser" class="anchor" href="#customize-the-capturing-web-browser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customize the capturing web browser</h3>
+
+<p>Add some cookies to the capturing browser</p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://yourwebsite.com")
+           .AddCookie(new Cookie("yourwebsite.com", "/", "CookieName", "1"));
+</code></pre>
+
+<p>Customize user agent </p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://yourwebsite.com")
+           .SetUserAgent("Mozilla/5.0 (Windows NT 5.1; rv:15.0) Gecko/20100101 Firefox/15.0.1");
+</code></pre>
+
+<p>Change browser's accept language. </p>
+
+<pre><code>var screenshotJob = ScreenshotJobBuilder.Create("https://yourwebsite.com")
+           .SetAcceptLanguages("fr,en;q=0.5");
+</code></pre>
+
+<h3>
+<a id="integrate-naturally-into-your-aspnet-mvc-application" class="anchor" href="#integrate-naturally-into-your-aspnet-mvc-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Integrate naturally into your ASP.NET MVC application</h3>
+
+<p>Freezer can be easily integrated into an ASP.NET MVC website. Following sample shows how to picturize an action, preserving sessions carried by cookies. </p>
+
+<pre><code>[Authorize]
+public class HomeController : Controller
+{
+    /// &lt;summary&gt;
+    /// Display a HTML/Javascript chart
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public ActionResult DisplayChart()
+    {
+        return View();
+    }
+
+    /// &lt;summary&gt;
+    /// This action will return Home/DisplayChart as picture. Preserving sessions.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public ActionResult DownloadChart()
+    {
+        var screenShotJob = ScreenshotJobBuilder.Create("DisplayChart", "Home")
+            .SetTransfertRequestCookies(true); // forward session cookies to the capturing browser
+
+        return screenShotJob.Freeze();
+    }
+}
+</code></pre>
+
+<h3>
+<a id="performance" class="anchor" href="#performance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Performance</h3>
+
+<p>Freezer use a real Gecko engine to perform screenshot. Thus, warming up the web browser may slow down the first use of Freezer. </p>
+
+<p>You can improve overall performance by : </p>
+
+<ul>
+<li>setting explicit <code>minimumWorkerCount</code> and <code>maximumWorkerCount</code> in the config section of your application (cf Configuration file part). </li>
+<li>calling <code>FreezerGlobal.Initialize()</code> to init Freezer.</li>
+</ul>
+
+<h3>
+<a id="configuration-file" class="anchor" href="#configuration-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration file</h3>
+
+<p>You can set the defaults settings value of Freezer by adding the following sections to your application's configuration file. </p>
+
+<pre><code>  &lt;configSections&gt;
+    &lt;sectionGroup name="freezerGlobal"&gt;
+      &lt;section name="freezerConfiguration" type="Freezer.Configurations.FreezerConfigurationHandler, Freezer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" allowLocation="true" allowDefinition="Everywhere"/&gt;
+    &lt;/sectionGroup&gt;
+  &lt;/configSections&gt;
+  &lt;freezerGlobal&gt;
+    &lt;freezerConfiguration 
+      minimumWorkerCount="2" 
+      maximumWorkerCount="4"
+      defaultAcceptLanguageHeader="en"
+      defaultBrowserWidth="1366"
+      defaultBrowserHeight="768"
+      defaultCaptureTimeoutSeconds="60"
+      &gt;
+    &lt;/freezerConfiguration&gt;
+  &lt;/freezerGlobal&gt;
+</code></pre>
+
+<p>All the parameters starting with <em>default</em> are optionals and can be override at usage. </p>
+
+<p><strong>minimumWorkerCount</strong>: Number of Gecko host processes per appdomain to be warm-up when <code>FreezerGlobal.Initialize()</code> is called or at the first use of the engine. </p>
+
+<p><strong>maximumWorkerCount</strong>: Total number of Gecko host processes  per appdomain.</p>
+
+<hr>
+
+<blockquote>
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>Freezer needs .NET 4.5+ .</li>
+<li>Freezer can be bound in both x86 and x64 applications. Anyway <em>gecko host processes</em> are run in 32bits.</li>
+<li>Freezer use the awesome <a href="https://bitbucket.org/geckofx/">GeckoFX project</a> under MPL license. </li>
+<li>Freezer is not compatible yet with the mono plateform . You can contribute at github/link to make this happen.</li>
+</ul>
+</blockquote>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/haga-rak/Freezer">Freezer</a> is maintained by <a href="https://github.com/haga-rak">haga-rak</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
