@@ -1,0 +1,14 @@
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\Freezer.SamplesConsole.exe.config
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\Freezer.SamplesConsole.exe
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\Freezer.SamplesConsole.pdb
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\Freezer.dll
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\System.Web.Mvc.dll
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\Freezer.pdb
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\Freezer.dll.config
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\System.Web.Mvc.xml
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\bin\Debug\fr\System.Web.Mvc.resources.dll
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\obj\Debug\Freezer.SamplesConsole.csprojResolveAssemblyReference.cache
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\obj\Debug\Freezer.SamplesConsole.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\obj\Debug\Freezer.SamplesConsole.csproj.CopyComplete
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\obj\Debug\Freezer.SamplesConsole.exe
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.SamplesConsole\obj\Debug\Freezer.SamplesConsole.pdb

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<!--!!!!! WARNING !!! Changing this page may ruin unit tests -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cookie print</title>
+    <script type="text/javascript">
+          function getCookie(name)
+          {
+            var re = new RegExp(name + "=([^;]+)");
+            var value = re.exec(document.cookie);
+            return (value != null) ? unescape(value[1]) : null;
+          }
+    </script>
+</head>
+<body>
+<h1>
+    Unit tests #2
+</h1>
+<p>
+    FreezerCookie value : 
+    <script type="text/javascript">
+        document.write(getCookie("FreezerCookie"));
+    </script>
+</p>
+</body>
+</html>

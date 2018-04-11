@@ -1,0 +1,28 @@
+﻿Problème multithread
+Les Zones ne doivent pas avoir de constructeur par défaut
+Gérer dans le cas ou les threads s'exécutent en mode AppPoolIdentity
+Tests requalifier les noms des tests trop nuls
+Persisitence RemoteWorker, en cas de perte du freezercapture, recuperer
+
+Gérer la récuperation en cas d'exit d'un freezercapture
+Ajouter default browserzie et default accept language dans les fichiers de configurations 
+
+Gerer une large page.
+Verification de la version de freezercapture
+Gerer les cas de certificats invalide
+Limited when file size is big
+
+public (sealed|class|enum|static class|interface|partial|struct|abstract class)
+internal $1
+
+nuget pack Freezer.csproj -Prop Configuration=Release
+
+
+Add documentation in library 
+Handling freezer_capture_crash. 
+
+Fix crash in case 
+
+Timeout freezr
+
+

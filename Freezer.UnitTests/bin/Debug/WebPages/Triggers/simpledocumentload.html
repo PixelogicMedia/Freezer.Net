@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<!--!!!!! WARNING !!! Changing this page may ruin unit tests -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Render on FreezerFire event dispatched</title>
+    <script src="../jquery.min.js"></script>
+</head>
+<body>
+
+<h1>
+    Unit tests #1
+</h1>
+<h1 id="beforewindowload">
+    I'm visible until Window.Load is Fired
+</h1>
+<div id="maincontainer" style="display: none; width: 600px; height: 450px; background: blue; padding: 10px;">
+    <p style="color: white">
+        This block is rendered when FreezerFire event is dispatched
+    </p>
+</div>
+<div id="floatingcontainer" style="position: absolute; top: 220px; left: 250px; width: 200px; height: 350px; background: red; padding: 10px">
+    <p style="color: white">
+        A floating container
+    </p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('#maincontainer').show(0, function() {
+                var event = new MessageEvent('FreezerFire',
+                { 'view': window, 'bubbles': true, 'cancelable': false, 'data': 'FreezerFireData' });
+
+                document.dispatchEvent(event);
+            });
+        }, 1000);
+    });
+
+    $(window).load(function() {
+        $('#beforewindowload').hide();
+    });
+</script>
+</body>
+</html>

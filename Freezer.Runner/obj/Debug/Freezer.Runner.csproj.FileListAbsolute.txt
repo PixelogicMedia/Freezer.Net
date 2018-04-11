@@ -1,0 +1,14 @@
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\freezercapture.exe.config
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\freezercapture.exe
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\freezercapture.pdb
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\Freezer.dll
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\System.Web.Mvc.dll
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\Freezer.pdb
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\Freezer.dll.config
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\System.Web.Mvc.xml
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\bin\Debug\fr\System.Web.Mvc.resources.dll
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\obj\Debug\Freezer.Runner.csprojResolveAssemblyReference.cache
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\obj\Debug\Freezer.Runner.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\obj\Debug\Freezer.Runner.csproj.CopyComplete
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\obj\Debug\freezercapture.exe
+C:\Users\Administrateur\Documents\Visual Studio 2012\Map\Giretra\Freezer\Freezer.Runner\obj\Debug\freezercapture.pdb
