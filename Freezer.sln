@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freezer", "Freezer\Freezer.csproj", "{EF558F09-49EE-4DCD-A29A-3FEC27000F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freezer.Runner", "Freezer.Runner\Freezer.Runner.csproj", "{8CAE5D7D-1312-4B12-B039-6F435A90A209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freezer.UnitTests", "Freezer.UnitTests\Freezer.UnitTests.csproj", "{DC9AC5AB-2A9A-4730-8678-1C51C3CB07CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freezer.Web", "Freezer.Web\Freezer.Web.csproj", "{B8D7D2BA-67C6-43E8-B0A1-4BA020F36BA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freezer.SamplesConsole", "Freezer.SamplesConsole\Freezer.SamplesConsole.csproj", "{12FAA1A0-697A-498C-A8F4-AD1258757C38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{41A3967E-0628-4FBF-B858-0FC695101B81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF558F09-49EE-4DCD-A29A-3FEC27000F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF558F09-49EE-4DCD-A29A-3FEC27000F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF558F09-49EE-4DCD-A29A-3FEC27000F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF558F09-49EE-4DCD-A29A-3FEC27000F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CAE5D7D-1312-4B12-B039-6F435A90A209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CAE5D7D-1312-4B12-B039-6F435A90A209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CAE5D7D-1312-4B12-B039-6F435A90A209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CAE5D7D-1312-4B12-B039-6F435A90A209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9AC5AB-2A9A-4730-8678-1C51C3CB07CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9AC5AB-2A9A-4730-8678-1C51C3CB07CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9AC5AB-2A9A-4730-8678-1C51C3CB07CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9AC5AB-2A9A-4730-8678-1C51C3CB07CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D7D2BA-67C6-43E8-B0A1-4BA020F36BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D7D2BA-67C6-43E8-B0A1-4BA020F36BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D7D2BA-67C6-43E8-B0A1-4BA020F36BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D7D2BA-67C6-43E8-B0A1-4BA020F36BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FAA1A0-697A-498C-A8F4-AD1258757C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FAA1A0-697A-498C-A8F4-AD1258757C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FAA1A0-697A-498C-A8F4-AD1258757C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FAA1A0-697A-498C-A8F4-AD1258757C38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ksven41.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Freezer\\Freezer.csproj
+		SccProjectName1 = Freezer
+		SccLocalPath1 = Freezer
+		SccProjectUniqueName2 = Freezer.Runner\\Freezer.Runner.csproj
+		SccProjectName2 = Freezer.Runner
+		SccLocalPath2 = Freezer.Runner
+		SccProjectUniqueName3 = Freezer.UnitTests\\Freezer.UnitTests.csproj
+		SccProjectName3 = Freezer.UnitTests
+		SccLocalPath3 = Freezer.UnitTests
+		SccProjectUniqueName4 = Freezer.Web\\Freezer.Web.csproj
+		SccProjectName4 = Freezer.Web
+		SccLocalPath4 = Freezer.Web
+		SccProjectUniqueName5 = Freezer.SamplesConsole\\Freezer.SamplesConsole.csproj
+		SccProjectName5 = Freezer.SamplesConsole
+		SccLocalPath5 = Freezer.SamplesConsole
+	EndGlobalSection
+EndGlobal
