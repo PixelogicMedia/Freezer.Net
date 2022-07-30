@@ -5,6 +5,3 @@ Freezer is a .NET webpage screenshotting library. It's fully integrable into an 
 
 Freezer is available on [nuget.org](https://www.nuget.org/packages/Freezer/) and can be set up and used in less than a minute. 
 
-
-### Licence
-Freezer is under MIT license. GeckoDriver is under MPL2.
